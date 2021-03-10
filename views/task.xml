@@ -43,11 +43,22 @@
     </field>
   </record>
 
+  <!-- graph view -->
+  <record id="task_view_graph" model="ir.ui.view">
+    <field name="name">opentasks.task.view.graph</field>
+    <field name="model">opentasks.task</field>
+    <field name="arch" type="xml">
+      <graph string="Done VS Undone tasks" type="pie">
+        <field name="done" />
+      </graph>
+    </field>
+  </record>
+
   <!-- action -->
   <record id="task_list_action" model="ir.actions.act_window">
     <field name="name">Tasks</field>
     <field name="res_model">opentasks.task</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,graph</field>
   </record>
 
   <!-- menu -->
