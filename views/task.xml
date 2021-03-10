@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- tree view -->
+  <record id="task_view_tree" model="ir.ui.view">
+    <field name="name">opentasks.task.view.tree</field>
+    <field name="model">opentasks.task</field>
+    <field name="arch" type="xml">
+      <tree string="Tasks List" decoration-info="done==True" decoration-danger="done==False">
+        <field name="name" />
+        <field name="description" />
+        <field name="done" />
+      </tree>
+    </field>
+  </record>
+
+  <!-- form view -->
+  <record id="task_view_form" model="ir.ui.view">
+    <field name="name">opentasks.task.view.form</field>
+    <field name="model">opentasks.task</field>
+    <field name="arch" type="xml">
+      <form string="Task Form">
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="description" />
+            <field name="done" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- search view -->
+  <record id="task_view_search" model="ir.ui.view">
+    <field name="name">opentasks.task.view.search</field>
+    <field name="model">opentasks.task</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name" />
+        <field name="description" />
+      </search>
+    </field>
+  </record>
+
+  <!-- action -->
+  <record id="task_list_action" model="ir.actions.act_window">
+    <field name="name">Tasks</field>
+    <field name="res_model">opentasks.task</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- menu -->
+  <menuitem id="tasks_menu" name="Tasks" action="task_list_action" parent="opentasks_menu" />
+
+</odoo>

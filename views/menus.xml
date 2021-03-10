@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- main menu -->
+  <menuitem id="main_opentasks_menu" name="Open Tasks" />
+
+  <!-- sub menus -->
+  <menuitem id="opentasks_menu" name="Open Tasks" parent="main_opentasks_menu" />
+
+</odoo>
